@@ -1,18 +1,18 @@
 /*
-  TSMovement.h - Library for moving the RTA321 robot.
+  MVMovement.h - Library for moving the RTA321 robot.
   Created by Tobias Schmücker, October 18, 2016.
   Released into the public domain.
 */
 
-#ifndef TSMovement_h
-#define TSMovement_h
+#ifndef MVMovement_h
+#define MVMovement_h
 
 #include "Arduino.h"
 
-class TSMovement
+class MVMovement
 {
   public:
-    TSMovement();
+    MVMovement();
     void moveForward();
     void moveBackward();
     void stopMovement();

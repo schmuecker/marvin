@@ -1,13 +1,13 @@
 /*
-  TSMovement.h - Library for moving the RTA321 robot.
+  MVMovement.h - Library for moving the RTA321 robot.
   Created by Tobias Schmücker, October 18, 2016.
   Released into the public domain.
 */
 
-#include "TSMovement.h"
+#include "MVMovement.h"
 #include "Arduino.h"
 
-TSMovement::TSMovement()
+MVMovement::MVMovement()
 {
   
   // The rotation factor depends on the surface the robot's on.
@@ -25,7 +25,7 @@ TSMovement::TSMovement()
   pinMode(9, OUTPUT);
 }
 
-void TSMovement::moveForward()
+void MVMovement::moveForward()
 {
   // left motor
   digitalWrite(5, 0);
@@ -35,7 +35,7 @@ void TSMovement::moveForward()
   digitalWrite(9, 1);
 }
 
-void TSMovement::moveBackward()
+void MVMovement::moveBackward()
 {
   // left motor
   digitalWrite(5, 1);
@@ -45,7 +45,7 @@ void TSMovement::moveBackward()
   digitalWrite(9, 0);
 }
 
-void TSMovement::stopMovement() {
+void MVMovement::stopMovement() {
   // left motor
   digitalWrite(4, 0);
   digitalWrite(5, 0);
@@ -54,7 +54,7 @@ void TSMovement::stopMovement() {
   digitalWrite(9, 0);
 }
 
-void TSMovement::spinRight() {
+void MVMovement::spinRight() {
   // left motor
   digitalWrite(4, 1);
   digitalWrite(5, 0);
@@ -63,13 +63,13 @@ void TSMovement::spinRight() {
   digitalWrite(9, 0);
 }
 
-void TSMovement::spinRightDeg(int deg) {
+void MVMovement::spinRightDeg(int deg) {
   spinRight();
   // determines the rotation duration ( = rotation angle)
   delay(deg * ROTATIONFACTOR);
 }
 
-void TSMovement::spinLeft() {
+void MVMovement::spinLeft() {
   // left motor
   digitalWrite(4, 0);
   digitalWrite(5, 1);
@@ -78,7 +78,7 @@ void TSMovement::spinLeft() {
   digitalWrite(9, 1);
 }
 
-void TSMovement::spinLeftDeg(int deg) {
+void MVMovement::spinLeftDeg(int deg) {
   spinLeft();
   // determines the rotation duration ( = rotation angle)
   delay(deg * ROTATIONFACTOR);
