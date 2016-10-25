@@ -9,7 +9,16 @@
 
 TSMovement::TSMovement()
 {
-  ROTATIONFACTOR = 2.58;
+  
+  // The rotation factor depends on the surface the robot's on.
+  // Make sure to comment out the unused variables.
+
+  // Neill Wycik room
+  // ROTATIONFACTOR = 2.58;
+
+  // Maker Space in RCC
+  ROTATIONFACTOR = 2.64;
+
   pinMode(4, OUTPUT);
   pinMode(5, OUTPUT);
   pinMode(8, OUTPUT);
