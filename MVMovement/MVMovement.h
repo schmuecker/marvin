@@ -23,6 +23,10 @@ class MVMovement
   private:
     float ROTATIONFACTOR;
     int TRAVELDURATION;
+    int leftA;
+    int leftB;
+    int rightA;
+    int rightB;
 };
 
 #endif

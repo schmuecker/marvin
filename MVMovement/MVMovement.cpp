@@ -19,48 +19,54 @@ MVMovement::MVMovement()
   // Maker Space in RCC
   ROTATIONFACTOR = 2.64;
 
-  pinMode(4, OUTPUT);
-  pinMode(5, OUTPUT);
-  pinMode(8, OUTPUT);
-  pinMode(9, OUTPUT);
+  // Pin numbers
+  leftA = 4;
+  leftB = 5;
+  rightA = 9;
+  rightB = 8;
+
+  pinMode(leftA, OUTPUT);
+  pinMode(leftB, OUTPUT);
+  pinMode(rightB, OUTPUT);
+  pinMode(rightA, OUTPUT);
 }
 
 void MVMovement::moveForward()
 {
   // left motor
-  digitalWrite(5, 0);
-  digitalWrite(4, 1);
+  digitalWrite(leftA, 1);
+  digitalWrite(leftB, 0);
   // right motor
-  digitalWrite(8, 0);
-  digitalWrite(9, 1);
+  digitalWrite(rightA, 1);
+  digitalWrite(rightB, 0);
 }
 
 void MVMovement::moveBackward()
 {
   // left motor
-  digitalWrite(5, 1);
-  digitalWrite(4, 0);
+  digitalWrite(leftA, 0);
+  digitalWrite(leftB, 1);
   // right motor
-  digitalWrite(8, 1);
-  digitalWrite(9, 0);
+  digitalWrite(rightA, 0);
+  digitalWrite(rightB, 1);
 }
 
 void MVMovement::stopMovement() {
   // left motor
-  digitalWrite(4, 0);
-  digitalWrite(5, 0);
+  digitalWrite(leftA, 0);
+  digitalWrite(leftB, 0);
   // right motor
-  digitalWrite(8, 0);
-  digitalWrite(9, 0);
+  digitalWrite(rightB, 0);
+  digitalWrite(rightA, 0);
 }
 
 void MVMovement::spinRight() {
   // left motor
-  digitalWrite(4, 1);
-  digitalWrite(5, 0);
+  digitalWrite(leftA, 1);
+  digitalWrite(leftB, 0);
   // right motor
-  digitalWrite(8, 1);
-  digitalWrite(9, 0);
+  digitalWrite(rightB, 1);
+  digitalWrite(rightA, 0);
 }
 
 void MVMovement::spinRightDeg(int deg) {
@@ -71,11 +77,11 @@ void MVMovement::spinRightDeg(int deg) {
 
 void MVMovement::spinLeft() {
   // left motor
-  digitalWrite(4, 0);
-  digitalWrite(5, 1);
+  digitalWrite(leftA, 0);
+  digitalWrite(leftB, 1);
   // right motor
-  digitalWrite(8, 0);
-  digitalWrite(9, 1);
+  digitalWrite(rightB, 0);
+  digitalWrite(rightA, 1);
 }
 
 void MVMovement::spinLeftDeg(int deg) {
